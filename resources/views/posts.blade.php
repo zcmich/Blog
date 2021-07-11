@@ -7,20 +7,12 @@
     <link rel="stylesheet" href="/app.css">
     <title>My Blog</title>
 </head>
-<body>
-    <article>
-        <h1><a href="/posts/my-first-post">My First Post</a></h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem in suscipit nulla totam deleniti iusto magni numquam esse quo, similique, perferendis quos enim fugit ipsam et quidem! Aliquam ea eligendi animi et nesciunt cum perspiciatis, dicta repudiandae placeat eius, possimus maiores sed alias quisquam inventore esse voluptatibus. Exercitationem, at dicta incidunt qui dolores vero dolore, itaque, culpa quam quasi porro omnis. Quae hic cumque fuga labore voluptate eos quod, doloremque veritatis vero. Deserunt at tempore modi sint! Libero vel ipsam mollitia, eaque accusantium eum labore ut maiores corrupti? Porro impedit, delectus nesciunt vero exercitationem laudantium architecto explicabo modi atque earum laborum deleniti numquam sapiente, eveniet optio repellendus incidunt? Sequi aperiam architecto nihil quam eum animi iusto repudiandae, maiores ducimus quaerat deserunt, adipisci officia distinctio sed, sapiente culpa vero incidunt! Ipsum ipsa aut asperiores perspiciatis! Provident quam ad, nam molestiae quidem repellat eius enim et eos error, omnis beatae? Nemo qui optio eveniet necessitatibus tempora, cum libero recusandae minima veritatis molestiae ullam unde earum asperiores possimus nulla magnam beatae omnis autem culpa? Illo repellat sint deserunt obcaecati sequi tempora temporibus, blanditiis reiciendis omnis eius totam? Eos doloremque pariatur possimus tenetur recusandae ab ratione magnam perspiciatis eius ex hic, cumque, enim repellendus.</p>
-    </article>
+    <body>
+        <?php foreach ($posts as $post) : ?>
+            <article>
+                <?= $post; ?>
+            </article>
+        <?php endforeach; ?>
 
-    <article>
-        <h1><a href="/posts/my-second-post">My Second Post</a></h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem in suscipit nulla totam deleniti iusto magni numquam esse quo, similique, perferendis quos enim fugit ipsam et quidem! Aliquam ea eligendi animi et nesciunt cum perspiciatis, dicta repudiandae placeat eius, possimus maiores sed alias quisquam inventore esse voluptatibus. Exercitationem, at dicta incidunt qui dolores vero dolore, itaque, culpa quam quasi porro omnis. Quae hic cumque fuga labore voluptate eos quod, doloremque veritatis vero. Deserunt at tempore modi sint! Libero vel ipsam mollitia, eaque accusantium eum labore ut maiores corrupti? Porro impedit, delectus nesciunt vero exercitationem laudantium architecto explicabo modi atque earum laborum deleniti numquam sapiente, eveniet optio repellendus incidunt? Sequi aperiam architecto nihil quam eum animi iusto repudiandae, maiores ducimus quaerat deserunt, adipisci officia distinctio sed, sapiente culpa vero incidunt! Ipsum ipsa aut asperiores perspiciatis! Provident quam ad, nam molestiae quidem repellat eius enim et eos error, omnis beatae? Nemo qui optio eveniet necessitatibus tempora, cum libero recusandae minima veritatis molestiae ullam unde earum asperiores possimus nulla magnam beatae omnis autem culpa? Illo repellat sint deserunt obcaecati sequi tempora temporibus, blanditiis reiciendis omnis eius totam? Eos doloremque pariatur possimus tenetur recusandae ab ratione magnam perspiciatis eius ex hic, cumque, enim repellendus.</p>
-    </article>
-
-    <article>
-        <h1><a href="/posts/my-third-post">My Third Post</a></h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem in suscipit nulla totam deleniti iusto magni numquam esse quo, similique, perferendis quos enim fugit ipsam et quidem! Aliquam ea eligendi animi et nesciunt cum perspiciatis, dicta repudiandae placeat eius, possimus maiores sed alias quisquam inventore esse voluptatibus. Exercitationem, at dicta incidunt qui dolores vero dolore, itaque, culpa quam quasi porro omnis. Quae hic cumque fuga labore voluptate eos quod, doloremque veritatis vero. Deserunt at tempore modi sint! Libero vel ipsam mollitia, eaque accusantium eum labore ut maiores corrupti? Porro impedit, delectus nesciunt vero exercitationem laudantium architecto explicabo modi atque earum laborum deleniti numquam sapiente, eveniet optio repellendus incidunt? Sequi aperiam architecto nihil quam eum animi iusto repudiandae, maiores ducimus quaerat deserunt, adipisci officia distinctio sed, sapiente culpa vero incidunt! Ipsum ipsa aut asperiores perspiciatis! Provident quam ad, nam molestiae quidem repellat eius enim et eos error, omnis beatae? Nemo qui optio eveniet necessitatibus tempora, cum libero recusandae minima veritatis molestiae ullam unde earum asperiores possimus nulla magnam beatae omnis autem culpa? Illo repellat sint deserunt obcaecati sequi tempora temporibus, blanditiis reiciendis omnis eius totam? Eos doloremque pariatur possimus tenetur recusandae ab ratione magnam perspiciatis eius ex hic, cumque, enim repellendus.</p>
-    </article>
-</body>
+    </body>
 </html>
