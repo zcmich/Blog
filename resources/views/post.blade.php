@@ -9,8 +9,13 @@
 </head>
 <body>
     <article>
-        <?= $post; ?>
+        <h1><?= $post->title ?></h1>
     </article>
-    <a href="/">Go Backa</a>
+
+    <div>
+        <?= $post->body ?>
+    </div>
+
+    <a href="/">Go Back</a>
 </body>
 </html>

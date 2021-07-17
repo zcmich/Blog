@@ -1,7 +1,9 @@
 <?php
 
 use App\Models\Post;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -16,11 +18,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     $posts = Post::all();
-
-//    ddd($posts);
-    return view('posts',[
+    return view('posts', [
         'posts' => $posts
-        ]);
+    ]);
 });
 
 Route::get('posts/{post}', function ($slug) {
