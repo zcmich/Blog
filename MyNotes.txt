@@ -1,0 +1,5 @@
+
+
+Caching:
+cache('posts.all') //check value in cache for specified attribute
+cache()->forget('posts.all');//empty cache for specified value
