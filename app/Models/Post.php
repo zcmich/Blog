@@ -75,7 +75,13 @@ class Post
 
     public static function find($slug)
     {
-        return static::all()->firstWhere('slug',$slug);
+        $post = static::all()->firstWhere('slug',$slug);
+
+        if(! $post){
+            throw new ModelNotFoundException("Slug error");
+        }
+
+        return $post;
 
 //        ddd($posts->firstWhere('slug', $slug));
 
@@ -89,6 +95,19 @@ class Post
 //            return file_get_contents($path);
 //        });
 
+
+    }
+
+
+    public static function findOrFail($slug)
+    {
+        $post = static::find($slug);
+
+        if (!$post) {
+            throw new ModelNotFoundException("Slug error");
+        }
+
+        return $post;
 
     }
 

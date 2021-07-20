@@ -1,5 +1,26 @@
 
+->where('post', '[A-z_\-]+');//impose a condition on a slug present in the path
 
 Caching:
 cache('posts.all') //check value in cache for specified attribute
 cache()->forget('posts.all');//empty cache for specified value
+
+Debug loop in html ph file:
+@dd($loop) in the loop
+
+Blade components
+option 1:
+@extends('components.layout')
+
+@section('content')  //USE THE SAME NAME AS THAT USED IN THE LAYOUT
+   CODE
+@endsection
+
+option 2:
+
+<x-layout>
+   <x-slot name="content> //name of the block of code in the layout floder.by default its $slot
+          CODE
+   </x-slot>
+
+</x-layout>
