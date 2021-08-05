@@ -4,6 +4,7 @@ use App\Models\Post;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Route;
 use App\Models\Category;
+use App\Models\User;
 
 
 /*
@@ -19,7 +20,7 @@ use App\Models\Category;
 
 Route::get('/', function () {
     return view('posts', [
-        'posts' => Post::with('category')->get()
+        'posts' => Post::latest()->get()
     ]);
 });
 
@@ -32,9 +33,17 @@ Route::get('posts/{post:slug}', function (Post $post) {
 });
 
 
+//load all posts for given category
 Route::get('categories/{category:slug}',function(Category $category){
 return view('posts', [
     'posts' => $category->posts
 ]);
 });
 
+//load all posts for given author
+Route::get('authors/{author:username}',function(User $author){
+//    ddd($author);
+    return view('posts', [
+        'posts' => $author->posts
+    ]);
+});
