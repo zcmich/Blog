@@ -20,9 +20,10 @@ use App\Models\User;
 
 Route::get('/', function () {
     return view('posts', [
-        'posts' => Post::latest()->get()
+        'posts' => Post::latest()->get(),
+        'categories' => Category::all()
     ]);
-});
+})->name('home');
 
 //route model binding giving same name to the wild card and to the function
 Route::get('posts/{post:slug}', function (Post $post) {
@@ -35,15 +36,18 @@ Route::get('posts/{post:slug}', function (Post $post) {
 
 //load all posts for given category
 Route::get('categories/{category:slug}',function(Category $category){
-return view('posts', [
-    'posts' => $category->posts
-]);
-});
+    return view('posts', [
+        'posts' => $category->posts,
+        'currentCategory' => $category,
+        'categories' => Category::all()
+    ]);
+})->name('category');
 
 //load all posts for given author
 Route::get('authors/{author:username}',function(User $author){
 //    ddd($author);
     return view('posts', [
-        'posts' => $author->posts
+        'posts' => $author->posts,
+        'categories' => Category::all()
     ]);
 });

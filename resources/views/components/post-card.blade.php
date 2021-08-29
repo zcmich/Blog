@@ -1,5 +1,5 @@
 {{-- $attributes: added attributes to add extra css to existing css in the template--}}
-@props(['post'])<article
+@props(['post','category'])<article
     {{ $attributes->merge(['class' => "transition-colors duration-300 hover:bg-gray-100 border border-black border-opacity-0 hover:border-opacity-5 rounded-xl"])  }} >
     <div class="py-6 px-5">
         <div>
@@ -9,7 +9,7 @@
         <div class="mt-8 flex flex-col justify-between">
             <header>
                 <div class="space-x-2">
-{{--                    <x-category-button :category="$post->category"/>--}}
+                    <x-category-button :category="$post->category"/>
                 </div>
 
                 <div class="mt-4">
@@ -24,10 +24,10 @@
                 </div>
             </header>
 
-            <div class="text-sm mt-4">
-                <p>
-                    {{ $post->excerpt }}
-                </p>
+            <div class="text-sm mt-4 space-y-4"">
+
+                    {!! $post->excerpt !!}
+
 
             </div>
 
