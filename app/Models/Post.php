@@ -21,6 +21,18 @@ class Post extends Model
 
     protected $with =['category','author'];
 
+    protected function scopeFilter($query,array $filters)
+        //not fully understood array of filter tom get value from request
+    {
+       $query->when( $filters['search'] ?? false,function ($query,$search) //nullsafe operator
+       {
+           $query
+               ->where('title','like', '%' . $search . '%')
+               ->orwhere('body','like', '%' . $search . '%');
+       });
+
+    }
+
     public function getRouteKeyName()
     {
         return 'slug';

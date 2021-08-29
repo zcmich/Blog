@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PostController;
 use App\Models\Post;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Route;
@@ -18,20 +19,10 @@ use App\Models\User;
 |
 */
 
-Route::get('/', function () {
-    return view('posts', [
-        'posts' => Post::latest()->get(),
-        'categories' => Category::all()
-    ]);
-})->name('home');
+Route::get('/', [PostController::class, 'index'])->name('home');
 
 //route model binding giving same name to the wild card and to the function
-Route::get('posts/{post:slug}', function (Post $post) {
-//    $post = Post::findOrFail($id);
-    return view('post',[
-        'post' => $post
-    ]);
-});
+Route::get('posts/{post:slug}', [PostController::class, 'show']);
 
 
 //load all posts for given category
