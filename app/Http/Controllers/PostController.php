@@ -15,16 +15,16 @@ class PostController extends Controller
 
 
 //    @dd(request('search'));
-       return view('posts', [
-           'posts' => Post::latest()->filter(request(['search']))->get(),
-           'categories' => Category::all()
+       return view('posts.index', [
+           'posts' => Post::latest()->filter(request(['search','category','author']))->get()
+//           'categories' => Category::all(), now passed in the CategoryDropdown
        ]);
    }
 
    public function show(Post $post)
    {
        //    $post = Post::findOrFail($id);
-    return view('post',[
+    return view('posts.show',[
         'post' => $post
     ]);
    }

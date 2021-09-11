@@ -26,19 +26,19 @@ Route::get('posts/{post:slug}', [PostController::class, 'show']);
 
 
 //load all posts for given category
-Route::get('categories/{category:slug}',function(Category $category){
-    return view('posts', [
-        'posts' => $category->posts,
-        'currentCategory' => $category,
-        'categories' => Category::all()
-    ]);
-})->name('category');
+//Route::get('categories/{category:slug}',function(Category $category){
+//    return view('posts', [
+//        'posts' => $category->posts,
+//        'currentCategory' => $category,
+//        'categories' => Category::all()
+//    ]);
+//})->name('category');
 
 //load all posts for given author
-Route::get('authors/{author:username}',function(User $author){
-//    ddd($author);
-    return view('posts', [
-        'posts' => $author->posts,
-        'categories' => Category::all()
-    ]);
-});
+//Route::get('authors/{author:username}',function(User $author){
+////    ddd($author);
+//    return view('posts.index', [
+//        'posts' => $author->posts,
+////        'categories' => Category::all()    //now passed in the CategoryDropdown component
+//    ]);
+//});
