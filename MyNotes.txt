@@ -24,3 +24,9 @@ option 2:
    </x-slot>
 
 </x-layout>
+
+Forms & authentification
+Eps45:
+-To cretae new controller "php artisan make:controller ControllerName"
+-ERROR 419 add CRSF
+to check value of variable in controller use var_dump(request()->all()); or @dd
