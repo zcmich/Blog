@@ -30,3 +30,15 @@ Eps45:
 -To cretae new controller "php artisan make:controller ControllerName"
 -ERROR 419 add CRSF
 to check value of variable in controller use var_dump(request()->all()); or @dd
+
+Eps46:
+Laravel mutator exple:
+public function  setPasswordAttribute($password)
+    {
+        $this->attributes['password'] = 'test';
+    }
+Laravel accesor exple
+public function getUsernameAttribute($username)
+    {
+        return ucwords($username);  //whenever retiriving attribute username from db wil be capitalisaed.This change is done in User.php i.e the model
+    }
