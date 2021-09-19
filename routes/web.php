@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\SessionsController;
 use App\Models\Post;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Route;
@@ -25,8 +26,14 @@ Route::get('/', [PostController::class, 'index'])->name('home');
 //route model binding giving same name to the wild card and to the function
 Route::get('posts/{post:slug}', [PostController::class, 'show']);
 
-Route::get('register',[RegisterController::class,'create']);
-Route::post('register',[RegisterController::class,'store']);
+Route::get('register',[RegisterController::class,'create'])->middleware('guest');
+Route::post('register',[RegisterController::class,'store'])->middleware('guest');
+
+Route::post('logout',[sessionsController::class,'destroy'])->middleware('auth');
+
+Route::get('login', [SessionsController::class, 'create'])->middleware('guest');
+Route::post('login',[sessionsController::class,'store'])->middleware('guest');
+
 
 
 //load all posts for given category

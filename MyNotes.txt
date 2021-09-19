@@ -42,3 +42,5 @@ public function getUsernameAttribute($username)
     {
         return ucwords($username);  //whenever retiriving attribute username from db wil be capitalisaed.This change is done in User.php i.e the model
     }
+
+Eps
